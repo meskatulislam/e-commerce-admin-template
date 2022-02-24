@@ -94,6 +94,10 @@
                                             <a href="./category-list.html" class="hover:text-indigo-500">Category
                                                 List</a>
                                         </li>
+                                        <li>
+                                            <a href="./brand-list.html" class="hover:text-indigo-500">Brand
+                                                List</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- end page list  -->
@@ -428,13 +432,13 @@
                 <!-- start body header -->
                 <div class="flex justify-between">
                     <!-- Include the section title  -->
-                    <h2 class="text-3xl font-bold text-gray-800">PRODUCTS</h2>
+                    <h2 class="text-3xl font-bold text-gray-800">CATEGORIES</h2>
                     <!-- start section options  -->
                     <div class="flex items-center space-x-4">
 
                         <input type="text" id="search-product"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded px-2 py-1.5 "
-                            placeholder="Search product">
+                            placeholder="Search category">
                         <button onclick="modalHandler('modal-add-product', true)"
                             class="flex items-center space-x-2 bg-indigo-700 text-slate-100 h-8 px-1.5 rounded hover:bg-indigo-600">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
@@ -443,7 +447,7 @@
                                     d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
                                     clip-rule="evenodd" />
                             </svg>
-                            <span class="font-semibold">New Product</span>
+                            <span class="font-semibold">New Category</span>
                         </button>
                     </div>
                     <!-- end section options  -->
@@ -455,24 +459,18 @@
                     <div
                         class="bg-white shadow-lg rounded-sm border border-gray-200 mb-2 min-w-[60rem] h-[34rem] overflow-x-auto overflow-y-auto relative">
                         <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-                            <h2 class="font-semibold text-gray-800">PRODUCT LIST <span
-                                    class="text-gray-400 font-medium">(938)</span>
+                            <h2 class="font-semibold text-gray-800">CATEGORY LIST <span
+                                    class="text-gray-400 font-medium">(17)</span>
                             </h2>
                             <div class="flex items-center text-sm font-medium space-x-4 text-gray-600">
+
                                 <div class="flex items-center space-x-1">
-                                    <span>Category</span>
+                                    <span>Type</span>
                                     <select name="" id="" class="text-sm rounded-full w-16 px-2 py-1 bg-gray-200">
                                         <option value="">All</option>
-                                        <option value="">Active</option>
-                                        <option value="">Inactive</option>
-                                    </select>
-                                </div>
-                                <div class="flex items-center space-x-1">
-                                    <span>Brand</span>
-                                    <select name="" id="" class="text-sm rounded-full w-16 px-2 py-1 bg-gray-200">
-                                        <option value="">All</option>
-                                        <option value="">Active</option>
-                                        <option value="">Inactive</option>
+                                        <option value="">Super category</option>
+                                        <option value="">Sub category</option>
+                                        <option value="">Sub sub category</option>
                                     </select>
                                 </div>
                                 <div class="flex items-center space-x-1">
@@ -507,25 +505,22 @@
                                         </div>
                                     </th>
                                     <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Product Name
+                                        Thumbnail
                                     </th>
                                     <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Category
+                                        Category Name
                                     </th>
                                     <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Brand
+                                        Parent Category
                                     </th>
                                     <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Stock
+                                        Total Product
                                     </th>
                                     <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Sale
+                                        Available
                                     </th>
                                     <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         Created at
-                                    </th>
-                                    <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        MRP
                                     </th>
                                     <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         Status
@@ -543,31 +538,25 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        ---
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <!-- <p class="text-xs">Android 12, One UI 4.1, Exynos 2200, 8/12GB RAM, 512GB
-                                            Storage, 5000mAh Battery</p> -->
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-green-600">In Stock <span class="text-gray-400">(230)</span></p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -575,6 +564,15 @@
                                             Active</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -600,29 +598,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        <a href="#">Category Name</a>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-red-600">Out of stock</p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -630,6 +623,15 @@
                                             Inactive</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -655,29 +657,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        ---
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-green-500">In Stock <span class="text-gray-400">(230)</span></p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -685,6 +682,15 @@
                                             Active</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -710,29 +716,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        ---
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-green-500">In Stock <span class="text-gray-400">(230)</span></p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -740,6 +741,15 @@
                                             Active</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -765,29 +775,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        ---
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-green-500">In Stock <span class="text-gray-400">(230)</span></p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -795,6 +800,15 @@
                                             Active</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -820,29 +834,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        ---
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-green-500">In Stock <span class="text-gray-400">(230)</span></p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -850,6 +859,15 @@
                                             Active</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -875,29 +893,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        <a href="#">Category Name</a>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-red-600">Out of stock</p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -905,6 +918,15 @@
                                             Inactive</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -930,29 +952,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        <a href="#">Category Name</a>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-red-600">Out of stock</p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -960,6 +977,15 @@
                                             Inactive</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -985,29 +1011,24 @@
                                         </div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <div class="flex items-center space-x-2">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                            <p>Galaxy S22 Ultra</p>
-                                        </div>
+                                        <img class="h-10 w-10 rounded-full border-2 border-gray-200"
+                                            src="../images/img1.jfif" alt="">
+                                    </td>
+
+                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        Category Name
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        SmartPhone
+                                        <a href="#">Category Name</a>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        Samsung
+                                        50 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        <p class="text-red-600">Out of stock</p>
+                                        35 Products
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        50
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        23/02/2022
-                                    </td>
-                                    <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                        135K
+                                        22/02/2022
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                         <div
@@ -1015,6 +1036,15 @@
                                             Inactive</div>
                                     </td>
                                     <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                        <button class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                            </svg>
+                                        </button>
                                         <button
                                             class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"

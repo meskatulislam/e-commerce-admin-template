@@ -19,15 +19,16 @@ function sidebarHandler() {
     let logo = document.getElementById('logo');
     let footer = document.getElementById('footer');
     let sidebar = document.getElementById('sidebar');
-    let width = sidebar.style.width;
-    let items = document.getElementsByClassName('sidebar-item-title');
+    let width = sidebar.style.minWidth;
+    let itemTitles = document.getElementsByClassName('sidebar-item-title');
     let btns = document.getElementsByClassName('btn-sidebar-item');
-    let subMenues = document.getElementsByClassName('sub-menu')
+    let subMenues = document.getElementsByClassName('sub-menu');
+    let subMenuItems = document.getElementsByClassName('sub-menu-item');
 
 
     // hide/show all title (Working)
-    for (let i = 0; i < items.length; i++) {
-        width === "80px" ? items[i].style.display = 'block' : items[i].style.display = 'none';
+    for (let i = 0; i < itemTitles.length; i++) {
+        width === "80px" ? itemTitles[i].style.display = 'block' : itemTitles[i].style.display = 'none';
     }
 
     // hide/show all buttons (working)
@@ -42,24 +43,27 @@ function sidebarHandler() {
     // hide/show all sub menues
     for (let i = 0; i < subMenues.length; i++) {
         subMenues[i].className = 'sub-menu hidden ml-9 text-gray-300';
+        subMenuItems[i].className = 'sub-menu-item';
         if (width !== "80px") {
-            subMenues[i].className = 'sub-menu hidden ml-9 text-gray-300 group-hover:block group-hover:absolute bg-gray-900 p-2 -mt-8 w-40 rounded';
+            subMenues[i].className = 'sub-menu hidden ml-9 text-gray-300 group-hover:block group-hover:absolute -mt-8 w-44 pl-3';
+            subMenuItems[i].className = 'sub-menu-item bg-gray-900 p-2 rounded text-gray-300';
         }
     }
 
+
     if (width === "80px") {
-        // Expand
+        // Expand the sidebar
         logo.style.display = "block";
         footer.style.display = "block";
+        sidebar.style.minWidth = "256px";
         btnSidebar.style.transform = "rotate(0deg)";
-        sidebar.style.width = "256px";
 
 
     } else {
-        // Collapse
+        // Collapse the sidebar
         logo.style.display = "none";
         footer.style.display = "none";
-        sidebar.style.width = "80px";
+        sidebar.style.minWidth = "80px";
         btnSidebar.style.transform = "rotate(180deg)";
     }
 };
@@ -75,3 +79,4 @@ function sidebarHandler() {
         dateTime()
     }, 1000);
 })();
+

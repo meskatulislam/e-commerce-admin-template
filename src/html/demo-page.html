@@ -6,26 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../dist/output.css">
-    <title>Demo Page | Admin Panel Frontend</title>
+    <title>Header-Sidebar | Admin Panel Frontend</title>
 </head>
 
-<body class="h-screen">
-    <main class="flex flex-row h-full">
+<body>
+    <main class="flex">
+
         <!-- start side navbar  -->
-        <section id="sidebar" class="w-64 transition-all duration-100">
-            <div class="flex flex-col h-full pl-6 pr-4 py-2 justify-between overflow-hidden bg-gray-800 text-slate-50">
+        <aside id="sidebar" class="min-w-[16rem] max-w-[16rem] h-screen  sticky top-0 transition-all duration-100 ">
+            <div
+                class="flex flex-col h-full pl-6 pr-4 py-2 justify-between bg-gray-800 text-slate-200 overflow-hidden hover:overflow-y-auto scrollbar">
                 <div class="flex flex-col">
-                    <a href="#" class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                        </svg>
-                        <span class=" text-2xl font-bold">PUCShop</span>
-                    </a>
+                    <div class="flex justify-between items-center py-3">
+                        <a id="logo" href="#" class="text-2xl font-bold">PUCShop</a>
+                        <!-- sidebar controller button  -->
+                        <button onclick="sidebarHandler()"
+                            class="bg-gray-700 p-1 rounded-full hover:bg-gray-900 hover:text-white">
+                            <svg id="btn-sidebar" xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 transition-transform duration-100" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <!-- end sidebar button  -->
+                    </div>
                     <ul class="flex flex-col space-y-3 mt-6">
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg class="shrink-0 h-7 w-7" viewBox="0 0 24 24">
@@ -50,7 +58,7 @@
                         </li>
                         <!-- pages  -->
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900 active">
+                            <div class="group rounded p-1 hover:bg-gray-900 active">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -62,7 +70,8 @@
                                         <span id="sidebar-item-title"
                                             class="sidebar-item-title ml-2 font-semibold">Pages</span>
                                     </a>
-                                    <button id="btn-pages" class="hover:bg-gray-700 rounded-full rotate-180"
+                                    <button id="btn-pages"
+                                        class="btn-sidebar-item hover:bg-gray-700 rounded-full rotate-180"
                                         onclick="openSubMenu('pages')">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                             fill="currentColor">
@@ -73,8 +82,8 @@
                                     </button>
                                 </div>
                                 <!-- start page list  -->
-                                <div id='pages' class="block ml-9 text-gray-300">
-                                    <ul>
+                                <div id='pages' class="sub-menu block ml-9 text-gray-300">
+                                    <ul class="sub-menu-item">
                                         <li>
                                             <a href="./demo-page.html" class="hover:text-indigo-500">Demo Page</a>
                                         </li>
@@ -87,7 +96,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="flex flex-col rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -98,7 +107,8 @@
                                         <span id="sidebar-item-title"
                                             class="sidebar-item-title ml-2 font-semibold">Customer</span>
                                     </a>
-                                    <button id="btn-customer" class="hover:bg-gray-700 rounded-full"
+                                    <button id="btn-customer"
+                                        class="btn-sidebar-item hover:bg-gray-700 rounded-full rotate-0"
                                         onclick="openSubMenu('customer')">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                             fill="currentColor">
@@ -108,8 +118,8 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div id='customer' class="hidden pl-9 text-gray-300">
-                                    <ul>
+                                <div id='customer' class="sub-menu hidden ml-9 text-gray-300">
+                                    <ul class="sub-menu-item">
                                         <li>
                                             <a href="#" class="hover:text-indigo-500">Customer List</a>
                                         </li>
@@ -124,7 +134,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -135,7 +145,8 @@
                                         <span id="sidebar-item-title"
                                             class="sidebar-item-title ml-2 font-semibold">Admin</span>
                                     </a>
-                                    <button id="btn-admin" class="hover:bg-gray-700 rounded-full"
+                                    <button id="btn-admin"
+                                        class="btn-sidebar-item hover:bg-gray-700 rounded-full rotate-0"
                                         onclick="openSubMenu('admin')">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                             fill="currentColor">
@@ -145,8 +156,8 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div id='admin' class="hidden ml-9 text-gray-300">
-                                    <ul>
+                                <div id='admin' class="sub-menu hidden ml-9 text-gray-300">
+                                    <ul class="sub-menu-item">
                                         <li>
                                             <a href="#" class="hover:text-indigo-500">Admins List</a>
                                         </li>
@@ -158,7 +169,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -170,7 +181,8 @@
                                         <span id="sidebar-item-title"
                                             class="sidebar-item-title ml-2 font-semibold">Ecommerce</span>
                                     </a>
-                                    <button id="btn-ecommerce" class="hover:bg-gray-700 rounded-full"
+                                    <button id="btn-ecommerce"
+                                        class="btn-sidebar-item hover:bg-gray-700 rounded-full rotate-0"
                                         onclick="openSubMenu('ecommerce')">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                             fill="currentColor">
@@ -180,8 +192,8 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div id='ecommerce' class="hidden ml-9 text-gray-300">
-                                    <ul>
+                                <div id='ecommerce' class="sub-menu hidden ml-9 text-gray-300">
+                                    <ul class="sub-menu-item">
                                         <li>
                                             <a href="#" class="hover:text-indigo-500">Product</a>
                                         </li>
@@ -196,7 +208,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -212,7 +224,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -225,7 +237,8 @@
                                         <span id="sidebar-item-title"
                                             class="sidebar-item-title ml-2 font-semibold">Offers</span>
                                     </a>
-                                    <button id="btn-offers" class="hover:bg-gray-700 rounded-full"
+                                    <button id="btn-offers"
+                                        class="btn-sidebar-item hover:bg-gray-700 rounded-full rotate-0"
                                         onclick="openSubMenu('offers')">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                             fill="currentColor">
@@ -235,8 +248,8 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div id='offers' class="hidden ml-9 text-gray-300">
-                                    <ul>
+                                <div id='offers' class="sub-menu hidden ml-9 text-gray-300">
+                                    <ul class="sub-menu-item">
                                         <li>
                                             <a href="#" class="hover:text-indigo-500">Offer List</a>
                                         </li>
@@ -248,7 +261,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -264,7 +277,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -281,7 +294,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -297,7 +310,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="rounded p-1 hover:bg-gray-900">
+                            <div class="group rounded p-1 hover:bg-gray-900">
                                 <div class="flex justify-between items-center">
                                     <a href="#" class="flex grow items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
@@ -309,7 +322,8 @@
                                         <span id="sidebar-item-title"
                                             class="sidebar-item-title ml-2 font-semibold">Settings</span>
                                     </a>
-                                    <button id="btn-settings" class="hover:bg-gray-700 rounded-full"
+                                    <button id="btn-settings"
+                                        class="btn-sidebar-item hover:bg-gray-700 rounded-full rotate-0"
                                         onclick="openSubMenu('settings')">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                             fill="currentColor">
@@ -319,8 +333,8 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div id='settings' class="hidden ml-9 text-gray-300">
-                                    <ul>
+                                <div id='settings' class="sub-menu hidden ml-9 text-gray-300">
+                                    <ul class="sub-menu-item">
                                         <li>
                                             <a href="#" class="hover:text-indigo-500">Carousel</a>
                                         </li>
@@ -336,27 +350,18 @@
                         </li>
                     </ul>
                 </div>
-                <span class="font-semibold text-gray-500">PUCShop © 2022</span>
+                <span id="footer" class="font-semibold text-gray-500">PUCShop © 2022</span>
             </div>
-        </section>
+        </aside>
         <!-- end side navbar  -->
 
+        <!-- start main section  -->
         <div class="flex flex-col grow">
             <!-- start header  -->
-            <nav class="sticky top-0 flex px-6 py-3 justify-between items-center bg-gray-700 text-slate-200">
+            <header class="sticky top-0 flex px-6 py-3 justify-between items-center bg-gray-700 text-slate-200">
                 <!-- start left items  -->
                 <div class="flex items-center space-x-5">
-                    <!-- sidebar button  -->
-                    <button onclick="sidebarHandler()"
-                        class="bg-gray-800 p-1 rounded hover:bg-gray-900 hover:text-white">
-                        <svg id="btn-sidebar" xmlns="http://www.w3.org/2000/svg"
-                            class="h-6 w-6 transition-transform duration-100" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                    <!-- ens sidebar button  -->
+
                     <span id="time" class="text-xl font-semibold">
                     </span>
                 </div>
@@ -401,15 +406,16 @@
                                     class="absolute top-1 right-1 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
                             </button>
                         </li>
-                        <li class="flex">
-                            <button class="">
-                                <img class="w-8 h-8 rounded-full ring" src="../images/user.jpg" alt="">
+                        <li>
+                            <button class="flex items-center pl-2 rounded-full space-x-3 hover:bg-gray-800">
+                                <span>Username</span>
+                                <img class="w-8 h-8 rounded-full ring" src="../images/user.png" alt="">
                             </button>
                         </li>
                     </ul>
                 </div>
                 <!-- end right items  -->
-            </nav>
+            </header>
             <!-- end header  -->
 
             <!-- start main body section  -->
@@ -432,13 +438,380 @@
                 <!-- end body header  -->
 
                 <!-- start body  -->
-                <div class="w-full p-2 bg-white rounded">
-                    <div>
-                        <!-- write your code here  -->
-                        <pre class="h-96">
-                            <>Write your code here<\>
-                        </pre>
+                <div class="w-full p-2 rounded">
+                    <div class="flex flex-col">
+                        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                <div class="shadow overflow-hidden border-b border-gray-200 rounded">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Name</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Title</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Status</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Role</th>
+                                                <th scope="col" class="relative px-6 py-3">
+                                                    <span class="sr-only">Edit</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="flex-shrink-0 h-10 w-10">
+                                                            <img class="h-10 w-10 rounded-full"
+                                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="ml-4">
+                                                            <div class="text-sm font-medium text-gray-900">Jane Cooper
+                                                            </div>
+                                                            <div class="text-sm text-gray-500">jane.cooper@example.com
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-900">Regional Paradigm Technician
+                                                    </div>
+                                                    <div class="text-sm text-gray-500">Optimization</div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        Active </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Admin</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                </td>
+                                            </tr>
 
+                                            <!-- More people... -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -446,9 +819,10 @@
                 <!-- end main body section  -->
             </div>
         </div>
+        <!-- end main section  -->
     </main>
-    <!-- start modal  -->
 
+    <!-- start modal  -->
     <!--- start demo modal --->
     <div id="modal-name"
         class="hidden py-12 bg-gray-900 bg-opacity-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 h-full">
@@ -487,7 +861,6 @@
         </div>
     </div>
     <!-- end demo modal  -->
-
     <!-- end modal -->
 
 

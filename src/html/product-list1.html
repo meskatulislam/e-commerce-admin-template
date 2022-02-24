@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../dist/output.css">
+    <title>Product List | Admin Panel Frontend</title>
+</head>
+
+<body class="h-screen">
+    <main class="flex flex-col h-full">
+        <!-- start header  -->
+        <nav class="bg-gray-700 text-slate-200 py-2.5 sticky top-0">
+            <div class="container-fluid flex flex-wrap justify-between items-center mx-auto">
+                <div class="flex items-center space-x-5">
+                    <!-- sidebar button  -->
+                    <button onclick="sidebarHandler()"
+                        class="bg-gray-800 p-1 rounded hover:bg-gray-900 hover:text-white">
+                        <svg id="btn-sidebar" xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 transition-transform duration-100" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <!-- ens sidebar button  -->
+                    <a href="#" class="flex text-lg font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span class="self-center whitespace-nowrap">PUCShop</span>
+                    </a>
+                </div>
+                <div class="w-auto">
+                    <ul class="flex space-x-5 font-medium items-center">
+                        <li class="flex">
+                            <div class="relative">
+                                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <input type="text" id=""
+                                    class="block p-2 pl-10 w-full text-gray-200 bg-gray-800 rounded-lg border border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Search...">
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <button class="relative inline-block bg-gray-800 rounded-full p-1 hover:bg-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                </svg>
+                                <span
+                                    class="absolute top-1 right-1 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
+                            </button>
+                        </li>
+                        <li class="flex">
+                            <button class="relative inline-block bg-gray-800 rounded-full p-1 hover:bg-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                <span
+                                    class="absolute top-1 right-1 inline-block w-2 h-2 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
+                            </button>
+                        </li>
+                        <li class="flex">
+                            <button class="">
+                                <img class="w-8 h-8 rounded-full ring" src="../images/user.jpg" alt="">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end header  -->
+
+        <div class="flex grow">
+
+            <!-- start side navbar  -->
+            <section id="sidebar" class="w-0 md:w-56  py-2 bg-gray-800 text-slate-50 transition-all duration-100">
+                <div class="container-fluid flex flex-col h-full justify-between">
+                    <ul class="flex flex-col space-y-2 ">
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg class="shrink-0 h-7 w-7" viewBox="0 0 24 24">
+                                            <path class="fill-current text-gray-400"
+                                                :class="page === 'dashboard' &amp;&amp; '!text-indigo-500'"
+                                                d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z">
+                                            </path>
+                                            <path class="fill-current text-gray-600"
+                                                :class="page === 'dashboard' &amp;&amp; 'text-indigo-600'"
+                                                d="M12 3c-4.963 0-9 4.037-9 9s4.037 9 9 9 9-4.037 9-9-4.037-9-9-9z">
+                                            </path>
+                                            <path class="fill-current text-gray-400"
+                                                :class="page === 'dashboard' &amp;&amp; 'text-indigo-200'"
+                                                d="M12 15c-1.654 0-3-1.346-3-3 0-.462.113-.894.3-1.285L6 6l4.714 3.301A2.973 2.973 0 0112 9c1.654 0 3 1.346 3 3s-1.346 3-3 3z">
+                                            </path>
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Dashboard</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- pages  -->
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900 active">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Pages</span>
+                                    </a>
+                                    <button class="hover:bg-gray-700 rounded-full" onclick="openSubMenu('pages')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rotate-180"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!-- start page list  -->
+                                <div id='pages' class="hiddenm ml-9 text-gray-300">
+                                    <ul>
+                                        <li>
+                                            <a href="./demo-page.html" class="hover:text-indigo-500">Demo Page</a>
+                                        </li>
+                                        <li>
+                                            <a href="./product-list.html" class="hover:text-indigo-500">Product List</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- end page list  -->
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex flex-col rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Customer</span>
+                                    </a>
+                                    <button class="hover:bg-gray-700 rounded-full" onclick="openSubMenu('customer')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id='customer' class="hidden pl-9 text-gray-300">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Customer List</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Add new customer</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Brand</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Admin</span>
+                                    </a>
+                                    <button class="hover:bg-gray-700 rounded-full" onclick="openSubMenu('admin')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id='admin' class="hidden ml-9 text-gray-300">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Admins List</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Add new admin</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Ecommerce</span>
+                                    </a>
+                                    <button class="hover:bg-gray-700 rounded-full" onclick="openSubMenu('ecommerce')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id='ecommerce' class="hidden ml-9 text-gray-300">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Product</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Category</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Brand</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Orders</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
+                                                clip-rule="evenodd" />
+                                            <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Offers</span>
+                                    </a>
+                                    <button class="hover:bg-gray-700 rounded-full" onclick="openSubMenu('offers')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id='offers' class="hidden ml-9 text-gray-300">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Offer List</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Add offer</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 4a1 1 0 000 2 1 1 0 011 1v1H7a1 1 0 000 2h1v3a3 3 0 106 0v-1a1 1 0 10-2 0v1a1 1 0 11-2 0v-3h3a1 1 0 100-2h-3V7a3 3 0 00-3-3z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Voucher</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path
+                                                d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+                                            <path
+                                                d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Messages</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Invoices</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="rounded p-1 hover:bg-gray-900">
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="flex grow items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <span id="sidebar-item-title"
+                                            class="sidebar-item-title ml-2 font-semibold">Settings</span>
+                                    </a>
+                                    <button class="hover:bg-gray-700 rounded-full" onclick="openSubMenu('settings')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id='settings' class="hidden ml-9 text-gray-300">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Carousel</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Banner</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:text-indigo-500">Product Section</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="font-semibold text-gray-500">PUCShop © 2022</div>
+                </div>
+            </section>
+            <!-- end side navbar  -->
+
+            <!-- start main body section  -->
+            <section id="main-section" class="grow bg-slate-200 transition-all duration-200">
+                <div class="container-fluid py-4 px-6 space-y-4">
+                    <!-- start body header -->
+                    <div class="flex justify-between">
+                        <!-- Include the section title  -->
+                        <h2 class="text-3xl font-bold text-gray-800">Product</h2>
+                        <!-- start section options  -->
+                        <div class="flex items-center space-x-4">
+                            <select name="" id="" class="rounded h-8 w-40 text-gray-600">
+                                <option value="">Today</option>
+                                <option value="">Last 7 Days</option>
+                                <option value="" selected>Last month</option>
+                                <option value="">Last 12 Months</option>
+                                <option value="">All Time</option>
+                            </select>
+                            <select name="" id="" class="rounded h-8 w-40 text-gray-600">
+                                <option value="">All Category</option>
+                                <option value="">Category option 1</option>
+                            </select>
+                            <button class="flex items-center bg-white h-8 px-2 rounded text-slate-700">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9 15H7a1 1 0 010-2h2a1 1 0 010 2zM11 11H5a1 1 0 010-2h6a1 1 0 010 2zM13 7H3a1 1 0 010-2h10a1 1 0 010 2zM15 3H1a1 1 0 010-2h14a1 1 0 010 2z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button onclick="modalHandler('modal-add-product', true)"
+                                class="flex items-center space-x-2 bg-indigo-600 text-slate-100 h-8 px-1.5 rounded hover:bg-indigo-700">
+                                <svg class="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z">
+                                    </path>
+                                </svg>
+                                <span class="font-semibold">Add Product</span>
+                            </button>
+                        </div>
+                        <!-- end section options  -->
+                    </div>
+                    <!-- end body header  -->
+
+                    <!-- start body  -->
+                    <div class="w-full p-2 bg-white rounded">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Title
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Brand
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Category</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Price
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Status
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Total Sale
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-full"
+                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                    alt="">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Product Title</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Brand Name</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Category Name</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">430</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        <span class="bg-green-600 rounded-xl px-4 text-white py-0.5">Active</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">430</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        <button class="rounded-full bg-slate-200 p-1 text-indigo-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                            </svg>
+                                        </button>
+                                        <button onclick="modalHandler('modal-delete-product', true)"
+                                            class="rounded-full bg-slate-200 p-1 text-red-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-full"
+                                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+                                                    alt="">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Product Title</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Brand Name</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">Category Name</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">430</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        <span class="bg-green-600 rounded-xl px-4 text-white py-0.5">Active</span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">430</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        <button class="rounded-full bg-slate-200 p-1 text-indigo-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                            </svg>
+                                        </button>
+                                        <button onclick="modalHandler('modal-delete-product', true)"
+                                            class="rounded-full bg-slate-200 p-1 text-red-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <!-- end body  -->
+
+        </div>
+        </section>
+        <!-- end main body section  -->
+
+        </div>
+
+        <!-- start modal  -->
+
+        <!--- start add product modal --->
+        <div id="modal-add-product"
+            class="hidden py-12 bg-gray-900 bg-opacity-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 h-full">
+            <div class="mx-auto w-[48rem]">
+                <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
+                    <div class="w-full flex justify-start items-center space-x-2 text-gray-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+                        </svg>
+                        <span class="text-2xl font-bold">Add Product</span>
+                    </div>
+                    <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Enter Product
+                        Details
+                    </h1>
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Product
+                                    Name</label>
+                                <input id="product-name"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                                    placeholder="Enter product name" />
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Brand</label>
+                                <select id="product-name"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border">
+                                    <option value="">Select Brand</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Category</label>
+                                <select id="product-name"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border">
+                                    <option value="">Select Category</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Unit
+                                    Cost</label>
+                                <input id="product-name"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                                    placeholder="Enter product name" />
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">MRP</label>
+                                <input id="product-name"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                                    placeholder="Enter product name" />
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Special
+                                    Price</label>
+                                <input id="product-name"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                                    placeholder="Enter product name" />
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Images</label>
+                                <input
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border py-1.5"
+                                    type="file" id="formFile">
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Short
+                                    Description</label>
+                                <input id="product-name"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                                    placeholder="Enter product name" />
+                            </div>
+                            <div>
+                                <label for="product-name"
+                                    class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Description</label>
+                                <textarea id="" rows="4"
+                                    class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full flex items-center pl-3 text-sm border-gray-300 rounded border py-1.5"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-start w-full">
+                            <button type="submit"
+                                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">+
+                                Add</button>
+                            <button type="button"
+                                class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm"
+                                onclick="modalHandler('modal-add-product')">Cancel</button>
+                        </div>
+
+                    </form>
+                    <button
+                        class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600"
+                        onclick="modalHandler('modal-add-product')" aria-label="close modal" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20"
+                            height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- end add product modal  -->
+
+        <!--- start delete product modal --->
+        <div id="modal-delete-product"
+            class="hidden py-12 bg-gray-900 bg-opacity-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 h-full">
+            <div role="alert" class="mx-auto w-[30rem] mt-30">
+                <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
+                    <div class="w-full flex justify-start items-center space-x-2 text-gray-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                        <span class="text-xl font-bold">Delete Product</span>
+                    </div>
+                    <p class="text-gray-900 font-lg font-semibold tracking-normal leading-tight">
+                        Are you sure you want to delete this product?
+                        </h1>
+                    <div>
+
+                        <div class="flex items-center justify-start w-full mt-12">
+                            <button type="submit"
+                                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out bg-red-500 rounded text-white px-8 py-1.5 text-sm font-semibold hover:bg-red-700">
+                                Yes, Delete it
+                            </button>
+                            <button type="button"
+                                class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-1.5 text-sm font-semibold"
+                                onclick="modalHandler('modal-delete-product')">Cancel</button>
+                        </div>
+
+                    </div>
+                    <button
+                        class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600"
+                        onclick="modalHandler('modal-delete-product')" aria-label="close modal" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20"
+                            height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- end delete product modal   -->
+
+        <!-- end modal -->
+    </main>
+
+
+    <!-- start js  -->
+    <script src="../js/common.js"></script>
+    <script src="../js/modal.js"></script>
+    <!-- end js  -->
+
+</body>
+
+</html>
