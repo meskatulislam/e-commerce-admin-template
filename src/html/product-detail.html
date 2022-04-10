@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../dist/output.css">
-    <title>Brands | Admin Panel Frontend</title>
+    <title>Product Detail | Admin Panel Frontend</title>
 </head>
 
 <body>
@@ -115,7 +115,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="./product-detail.html"
-                                                            class="hover:text-indigo-500">Product
+                                                            class="hover:text-indigo-500 text-indigo-500">Product
                                                             Details</a>
                                                     </li>
                                                     <li>
@@ -159,11 +159,11 @@
                                                     </li>
                                                     <li>
                                                         <a href="./brand-list.html"
-                                                            class="hover:text-indigo-500 text-indigo-500">Brands</a>
+                                                            class="hover:text-indigo-500">Brands</a>
                                                     </li>
                                                     <li>
                                                         <a href="./offer-list.html"
-                                                            class="hover:text-indigo-500 ">Offers</a>
+                                                            class="hover:text-indigo-500">Offers</a>
                                                     </li>
                                                     <li>
                                                         <a href="./voucher-code.html"
@@ -511,440 +511,465 @@
             <!-- start main body section  -->
             <div id="main-section"
                 class="flex flex-col grow  px-3 md:px-6 py-3 space-y-4 bg-slate-200 transition-all duration-200">
-                <!-- start body header  -->
-                <div class="flex justify-between">
+                <!-- start body header -->
+                <div class="flex justify-between items-center">
                     <!-- Include the section title  -->
-                    <h2 class="text-3xl font-bold text-gray-800">Brand</h2>
+                    <h2 class="text-lg font-medium md:text-3xl md:font-bold text-gray-800">PRODUCT DETAILS</h2>
                     <!-- start section options  -->
                     <div class="flex items-center space-x-4">
 
-                        <input type="text" id="search-product"
-                            class="hidden md:block bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded px-2 py-1.5 "
-                            placeholder="Search...">
-                        <button onclick="modalHandler('modal-add', true)"
-                            class="flex items-center space-x-2 bg-indigo-700 text-slate-100 h-8 px-1.5 rounded hover:bg-indigo-600">
+                        <a href="./create-product.html""
+                            class=" flex items-center space-x-2 bg-indigo-600 text-slate-100 h-8 px-1.5 rounded
+                            hover:bg-indigo-700">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                 fill="currentColor">
+                                <path
+                                    d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                 <path fill-rule="evenodd"
-                                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                    d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
                                     clip-rule="evenodd" />
                             </svg>
-                            <span class="font-semibold">New Brand</span>
-                        </button>
+                            <span class="font-semibold">Edit</span>
+                        </a>
                     </div>
                     <!-- end section options  -->
                 </div>
                 <!-- end body header  -->
 
                 <!-- start body  -->
-                <div class="w-full">
-                    <div class="overflow-x-auto">
-                        <div
-                            class="bg-white shadow-lg rounded-sm border border-gray-200 mb-2 min-w-[60rem] h-[34rem] overflow-y-auto relative">
-                            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-                                <h2 class="font-semibold text-gray-800">BRAND LIST <span
-                                        class="text-gray-400 font-medium">(17)</span>
-                                </h2>
-                                <div class="flex items-center text-sm font-medium space-x-4 text-gray-600">
-
-                                    <div class="flex items-center space-x-1">
-                                        <span>Type</span>
-                                        <select name="" id="" class="text-sm rounded-full w-16 px-2 py-1 bg-gray-200">
-                                            <option value="">All</option>
-                                            <option value="">Super category</option>
-                                            <option value="">Sub category</option>
-                                            <option value="">Sub sub category</option>
-                                        </select>
-                                    </div>
-                                    <div class="flex items-center space-x-1">
-                                        <span>Status</span>
-                                        <select name="" id="" class="text-sm rounded-full w-16 px-2 py-1 bg-gray-200">
-                                            <option value="">All</option>
-                                            <option value="">Active</option>
-                                            <option value="">Inactive</option>
-                                        </select>
-                                    </div>
-
-
-                                    <button class="bg-gray-200 p-2 rounded-full">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                <!-- <div class=""> -->
+                <div class="w-full bg-white p-2">
+                    <div class="flex flex-col 2xl:flex-row 2xl:space-x-8 mb-10">
+                        <!-- product gallery  -->
+                        <div class="flex flex-col space-y-2 min-w-[20rem] h-[30rem] 2xl:sticky 2xl:top-[5rem]">
+                            <div class="w-full h-[20rem]">
+                                <img id="1" class="w-full h-full rounded" src="../images/user.png" alt="">
+                                <img id="1" class="w-full h-full rounded hidden" src="../images/user.png" alt="">
+                                <img id="1" class="w-full h-full rounded hidden" src="../images/user.png" alt="">
+                                <img id="1" class="w-full h-full rounded hidden" src="../images/user.png" alt="">
+                            </div>
+                            <div class="w-full flex justify-between h-20 ">
+                                <div class="flex space-x-1">
+                                    <img id="1" class="w-16 h-16" src="../images/user.png" alt="">
+                                    <img id="1" class="w-16 h-16" src="../images/user.png" alt="">
+                                    <img id="1" class="w-16 h-16" src="../images/user.png" alt="">
+                                </div>
+                                <div class="w-16 h-16 bg-gray-300 flex items-center justify-center">
+                                    <label for="product-img">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-500"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                                clip-rule="evenodd" />
                                         </svg>
-                                    </button>
+                                    </label>
+                                    <input type="file" name="product-img" id="product-img" class="hidden">
                                 </div>
                             </div>
-
-                            <table class="table-auto min-w-full divide-y font-medium text-gray-800 divide-gray-200">
-                                <thead
-                                    class=" sticky top-0 shadow-sm text-xs uppercase font-semibold text-left text-gray-500 bg-gray-50 ">
-                                    <tr>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap w-px">
-                                            <div class="flex items-center">
-                                                <label class="inline-flex"><span class="sr-only">Select all</span>
-                                                    <input id="parent-checkbox" class="form-checkbox" type="checkbox"
-                                                        @click="toggleAll"></label>
-                                            </div>
-                                        </th>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Thumbnail
-                                        </th>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
-                                        </th>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Total Product
-                                        </th>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Available
-                                        </th>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Created at
-                                        </th>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Status
-                                        </th>
-                                        <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Action
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200 ">
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <a href="#">Brand Name</a>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-yellow-100 text-yellow-600 rounded-full text-center px-2.5 py-0.5">
-                                                Inactive</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
-                    </div>
-                    <div class="flex justify-between items-center py-2 space-x-2 border-gray-200">
-                        <p class="font-medium text-gray-600">Showing 01 to 06 of 938 products</p>
-                        <div class="flex space-x-4">
-                            <button
-                                class="flex space-x-1 font-medium items-center p-2 border bg-gray-50 text-gray-400 rounded">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <span>Previous </span>
-                            </button>
-                            <button
-                                class="flex space-x-1 font-medium items-center p-2 border bg-gray-50 text-indigo-600 rounded">
-                                <span>Next </span>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
+                        <!-- end product gallery  -->
+                        <div class="flex flex-col lg:flex-grow ">
+                            <div class="basic-info space-y-1">
+                                <h2 class="text-gray-700 font-medium text-xl">Full Sleeve Sweatshirt for Men</h2>
+                                <p class="text-gray-500 font-medium text-sm">Published: <span class="text-gray-900">26
+                                        Mar,
+                                        2021</span></p>
+                                <div class="flex items-center space-x-1 text-yellow-500 pt-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <span class="text-sm font-medium text-gray-500">( 5.50k Customer Review )</span>
+                                </div>
+                                <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 pt-4">
+                                    <div
+                                        class="flex space-x-3 items-center border-dashed py-2 px-5 rounded border border-gray-300 min-w-[10rem]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 4a1 1 0 000 2 1 1 0 011 1v1H7a1 1 0 000 2h1v3a3 3 0 106 0v-1a1 1 0 10-2 0v1a1 1 0 11-2 0v-3h3a1 1 0 100-2h-3V7a3 3 0 00-3-3z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                        <div class="flex flex-col font-medium">
+                                            <span class="text-sm text-gray-500">Price:</span>
+                                            <span class="text-gray-700">$120.40</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex space-x-3 items-center border-dashed py-2 px-5 rounded border border-gray-300 min-w-[10rem]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path
+                                                d="M9 2a2 2 0 00-2 2v8a2 2 0 002 2h6a2 2 0 002-2V6.414A2 2 0 0016.414 5L14 2.586A2 2 0 0012.586 2H9z" />
+                                            <path d="M3 8a2 2 0 012-2v10h8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                                        </svg>
+                                        <div class="flex flex-col font-medium">
+                                            <span class="text-sm text-gray-500">No. of Orders :</span>
+                                            <span class="text-gray-700">2,234</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex space-x-3 items-center border-dashed py-2 px-5 rounded border border-gray-300 min-w-[10rem]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path
+                                                d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
+                                            <path
+                                                d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
+                                            <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
+                                        </svg>
+                                        <div class="flex flex-col font-medium">
+                                            <span class="text-sm text-gray-500">Available Stocks:</span>
+                                            <span class="text-gray-700">1,230</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex space-x-3 items-center border-dashed py-2 px-5 rounded border border-gray-300 min-w-[10rem]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path
+                                                d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z" />
+                                        </svg>
+                                        <div class="flex flex-col font-medium">
+                                            <span class="text-sm text-gray-500">Total Rev.:</span>
+                                            <span class="text-gray-700">$60,645</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col lg:flex-row space-y-3 lg:space-y-0 justify-between pt-4">
+                                <div class="sizes space-y-1">
+                                    <span class="text-gray-700 font-medium">Sizes:</span>
+                                    <div class="text-gray-500 flex space-x-2">
+                                        <span
+                                            class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200">S</span>
+                                        <span
+                                            class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200">M</span>
+                                        <span
+                                            class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200">L</span>
+                                        <span
+                                            class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200">XL</span>
+                                    </div>
+                                </div>
+                                <div class="sizes space-y-1">
+                                    <span class="text-gray-700 font-medium">Colors:</span>
+                                    <div class="text-gray-500 flex space-x-2">
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-gray-600"></div>
+                                        </div>
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-indigo-600"></div>
+                                        </div>
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-sky-600"></div>
+                                        </div>
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-teal-600"></div>
+                                        </div>
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-yellow-500"></div>
+                                        </div>
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-red-600"></div>
+                                        </div>
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-gray-200"></div>
+                                        </div>
+                                        <div class="flex items-center justify-center rounded-full border p-1.5">
+                                            <div class="w-4 h-4 rounded-full bg-gray-9s00"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 space-x-1">
+                                <h2 class="font-medium text-gray-700">Description</h2>
+                                <p class="text-sm font-medium text-gray-400 text-justify">Tommy Hilfiger men stripeds
+                                    sweatshirt. Crafted
+                                    with cotton.
+                                    Material
+                                    composition is 100% organic cotton. This is
+                                    one of the world’s leading designer lifestyle brands and is internationally
+                                    recognized for celebrating the essence of
+                                    classic American cool style, featuring preppy with a twist designs.
+                                </p>
+                            </div>
+                            <div
+                                class="flex flex-col lg:flex-row justify-start pt-4 space-y-3 lg:space-y-0 lg:space-x-1">
+                                <div class="lg:min-w-[24rem] space-y-2">
+                                    <h2 class="font-medium text-gray-700">Features</h2>
+                                    <ul class="list-disc ml-5 text-sm text-gray-600 font-medium space-y-1">
+                                        <li>Full Sleeve</li>
+                                        <li>Cotton</li>
+                                        <li>All Sizes available</li>
+                                        <li>4 Different Color</li>
+                                    </ul>
+
+                                </div>
+                                <div class="lg:min-w-[24rem] space-y-2">
+                                    <h2 class="font-medium text-gray-700">Services</h2>
+                                    <ul class="text-sm text-gray-600 font-medium space-y-1">
+                                        <li>10 Days Replacement</li>
+                                        <li>Cash on Delivery available</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="description pt-6 text-gray-700 font-medium">
+                                <h2>Product Description</h2>
+                                <div class="pt-4">
+                                    <div class="">
+                                        <button onclick="showDetails(false)" id="btn-speci"
+                                            class="px-4 py-2 font-medium border-b-2 text-teal-500 border-teal-500">Specification</button>
+                                        <button onclick="showDetails(true)" id="btn-details"
+                                            class="px-4 font-medium py-2 hover:text-indigo-900">Details</button>
+                                    </div>
+                                    <div id="specification" class=" border p-4 text-sm">
+                                        <table class="w-full">
+                                            <tbody class="divide-y text-left  divide-gray-200">
+                                                <tr>
+                                                    <th class="py-3 px-6">Category</th>
+                                                    <td class="py-3 px-6">T-Shirt</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-3 px-6">Brand</th>
+                                                    <td class="py-3 px-6">Tommy Hilfiger</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-3 px-6">Color</th>
+                                                    <td class="py-3 px-6">Blue</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-3 px-6">Material</th>
+                                                    <td class="py-3 px-6">Cotton</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="py-3 px-6">Weight</th>
+                                                    <td class="py-3 px-6">120 Gram</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div id="details" class="hidden border p-4 text-sm">
+                                        <div class="flex flex-col space-y-4 text-gray-600">
+                                            <h2 class="text-xl">Tommy Hilfiger Sweatshirt for Men (Pink)</h2>
+                                            <p class="text-sm font-base">Tommy Hilfiger men striped pink sweatshirt.
+                                                Crafted with
+                                                cotton. Material
+                                                composition is 100% organic cotton. This is
+                                                one of the world’s leading designer lifestyle brands and is
+                                                internationally recognized for celebrating the essence of
+                                                classic American cool style, featuring preppy with a twist designs.</p>
+                                            <ul class="list-disc ml-5 text-sm text-gray-600 font-base space-y-1">
+                                                <li>Full Sleeve</li>
+                                                <li>Cotton</li>
+                                                <li>All Sizes available</li>
+                                                <li>4 Different Color</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description pt-6 text-gray-700 font-medium">
+                                <h2>Ratings & Reviews</h2>
+                                <div class="flex flex-col lg:flex-row space-y-3 lg:space-y-0 lg:space-x-4 pt-4">
+                                    <div class="flex flex-col min-w-[18rem]mm space-y-4">
+                                        <div class="w-full flex flex-col items-center">
+                                            <div
+                                                class="w-full flex justify-between items-center bg-gray-100 p-3 text-sm text-gray-600 rounded-md">
+                                                <div class="flex text-yellow-500">
+
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        viewBox="0 0 20 20" fill="currentColor">
+                                                        <path
+                                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                    </svg>
+                                                </div>
+                                                <span>4.5 Out of 5</span>
+                                            </div>
+                                            <span class="text-sm text-gray-600">Total 5.50k reviews</span>
+                                        </div>
+                                        <div class="w-full flex flex-col space-y-3 text-gray-500">
+                                            <div class="w-full flex justify-between items-center space-x-2 text-sm">
+                                                <span>5 Star</span>
+                                                <div class="grow bg-gray-200 rounded-full h-[5px]">
+                                                    <div class="bg-teal-500 w-[60%] h-full rounded-full"></div>
+                                                </div>
+                                                <span>2758</span>
+                                            </div>
+                                            <div class="w-full flex justify-between items-center space-x-2 text-sm">
+                                                <span>4 Star</span>
+                                                <div class="grow bg-gray-200 rounded-full h-[5px]">
+                                                    <div class="bg-teal-500 w-[45%] h-full rounded-full"></div>
+                                                </div>
+                                                <span>1063</span>
+                                            </div>
+                                            <div class="w-full flex justify-between items-center space-x-2 text-sm">
+                                                <span>3 Star</span>
+                                                <div class="grow bg-gray-200 rounded-full h-[5px]">
+                                                    <div class="bg-teal-500 w-[30%] h-full rounded-full"></div>
+                                                </div>
+                                                <span>997</span>
+                                            </div>
+                                            <div class="w-full flex justify-between items-center space-x-2 text-sm">
+                                                <span>2 Star</span>
+                                                <div class="grow bg-gray-200 rounded-full h-[5px]">
+                                                    <div class="bg-yellow-500 w-[20%] h-full rounded-full"></div>
+                                                </div>
+                                                <span>408</span>
+                                            </div>
+                                            <div class="w-full flex justify-between items-center space-x-2 text-sm">
+                                                <span>5 Star</span>
+                                                <div class="grow bg-gray-200 rounded-full h-[5px]">
+                                                    <div class="bg-red-500 w-[10%] h-full rounded-full"></div>
+                                                </div>
+                                                <span>207</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grow flex flex-col space-y-2">
+                                        <h2>Reviews</h2>
+                                        <div class="h-52 overflow-y-auto space-y-3 scrollbar-reviews pr-2">
+                                            <div class="w-full border-dashed border rounded p-3 space-y-3">
+                                                <div class="flex space-x-3">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-teal-500 p-0.5 px-1 text-xs text-white font-medium">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3"
+                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                        <span>4.2</span>
+                                                    </div>
+                                                    <span class="border-l pl-3 text-sm text-gray-500">
+                                                        Superb sweatshirt. I loved it. It is for winter
+                                                    </span>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                    <img src="../images/img1.jfif" alt="" class="w-12 h-12 rounded">
+                                                    <img src="../images/img1.jfif" alt="" class="w-12 h-12 rounded">
+                                                    <img src="../images/img1.jfif" alt="" class="w-12 h-12 rounded">
+                                                </div>
+                                                <div class="flex  justify-between items-center">
+                                                    <span>Henry</span>
+                                                    <span class="text-sm text-gray-400">12 Jul, 21</span>
+                                                </div>
+                                            </div>
+                                            <div class="w-full border-dashed border rounded p-3 space-y-3">
+                                                <div class="flex space-x-3">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-teal-500 p-0.5 px-1 text-xs text-white font-medium">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3"
+                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                        <span>4.2</span>
+                                                    </div>
+                                                    <span class="border-l pl-3 text-sm text-gray-500">
+                                                        Superb sweatshirt. I loved it. It is for winter
+                                                    </span>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                </div>
+                                                <div class="flex  justify-between items-center">
+                                                    <span>Henry</span>
+                                                    <span class="text-sm text-gray-400">12 Jul, 21</span>
+                                                </div>
+                                            </div>
+                                            <div class="w-full border-dashed border rounded p-3 space-y-3">
+                                                <div class="flex space-x-3">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-teal-500 p-0.5 px-1 text-xs text-white font-medium">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3"
+                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                        <span>4.2</span>
+                                                    </div>
+                                                    <span class="border-l pl-3 text-sm text-gray-500">
+                                                        Superb sweatshirt. I loved it. It is for winter
+                                                    </span>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                </div>
+                                                <div class="flex  justify-between items-center">
+                                                    <span>Henry</span>
+                                                    <span class="text-sm text-gray-400">12 Jul, 21</span>
+                                                </div>
+                                            </div>
+                                            <div class="w-full border-dashed border rounded p-3 space-y-3">
+                                                <div class="flex space-x-3">
+                                                    <div
+                                                        class="flex items-center rounded-full bg-teal-500 p-0.5 px-1 text-xs text-white font-medium">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3"
+                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                            <path
+                                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                        </svg>
+                                                        <span>4.2</span>
+                                                    </div>
+                                                    <span class="border-l pl-3 text-sm text-gray-500">
+                                                        Superb sweatshirt. I loved it. It is for winter
+                                                    </span>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                </div>
+                                                <div class="flex  justify-between items-center">
+                                                    <span>Henry</span>
+                                                    <span class="text-sm text-gray-400">12 Jul, 21</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- </div> -->
                 <!-- end body  -->
                 <!-- end main body section  -->
 
@@ -954,61 +979,32 @@
     </main>
 
     <!-- start modal  -->
-    <!--- start add admin modal --->
-    <div id="modal-add"
-        class="hidden py-10 bg-gray-900 bg-opacity-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 h-full">
-        <div class="mx-auto w-[28rem]">
-            <div class="relative py-5 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
+    <!--- start demo modal --->
+    <div id="modal-name"
+        class="hidden py-12 bg-gray-900 bg-opacity-50 transition duration-150 ease-in-out z-50 absolute top-0 right-0 bottom-0 left-0 h-full">
+        <div class="mx-auto w-[48rem]">
+            <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
+
+                <!-- start modal title  -->
                 <div class="w-full flex justify-start items-center space-x-2 text-gray-600 mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
                     </svg>
-                    <span class="text-2xl font-bold">New Brand</span>
+                    <span class="text-2xl font-bold">Add Product</span>
                 </div>
-                <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Enter Brand
-                    Details
-                </h1>
-                <form action="#" method="POST">
-                    <div class="grid grid-cols-1 gap-1">
-                        <div>
-                            <label for="full-name"
-                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Brand Name</label>
-                            <input id="full-name" name="full-name" type="text"
-                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
-                                placeholder="Enter the full name" />
-                        </div>
-                        <div>
-                            <label for="images"
-                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Thumbnail/Icon</label>
-                            <input id="images"
-                                class="hiddenm mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border py-1.5"
-                                type="file" id="formFile">
-                        </div>
-                        <div>
-                            <label for="role"
-                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Status</label>
-                            <select id="role" name="role"
-                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border">
-                                <option value="">Active</option>
-                                <option value="">Inactive</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-start w-full">
-                        <button type="submit"
-                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">+
-                            Add</button>
-                        <button type="button"
-                            class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm"
-                            onclick="modalHandler('modal-add')">Cancel</button>
-                    </div>
+                <!-- end modal title -->
 
-                </form>
+                <div class="w-full">
+                    <!-- write your code here  -->
+                    <h2>Write your code here</h2>
+                </div>
+
+                <!-- close button  -->
                 <button
                     class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600"
-                    onclick="modalHandler('modal-add')" aria-label="close modal" role="button">
+                    onclick="modalHandler('modal-name')" aria-label="close modal" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20"
                         height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -1020,56 +1016,35 @@
             </div>
         </div>
     </div>
-    <!-- end add admin modal  -->
-
-    <!--- start delete user modal --->
-    <div id="modal-delete"
-        class="hidden py-12 bg-gray-900 bg-opacity-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 h-full">
-        <div role="alert" class="mx-auto w-[30rem] mt-30">
-            <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
-                <div class="w-full flex justify-start items-center space-x-2 text-gray-600 mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                    <span class="text-xl font-bold">Delete admin</span>
-                </div>
-                <p class="text-gray-900 font-lg font-semibold tracking-normal leading-tight">
-                    Are you sure you want to delete the admin?
-                    </h1>
-                <div>
-
-                    <div class="flex items-center justify-start w-full mt-12">
-                        <button type="submit"
-                            class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out bg-red-500 rounded text-white px-8 py-1.5 text-sm font-semibold hover:bg-red-700">
-                            Yes, Delete it
-                        </button>
-                        <button type="button"
-                            class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-1.5 text-sm font-semibold"
-                            onclick="modalHandler('modal-delete')">Cancel</button>
-                    </div>
-
-                </div>
-                <button
-                    class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600"
-                    onclick="modalHandler('modal-delete')" aria-label="close modal" role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20"
-                        height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- end delete product modal   -->
+    <!-- end demo modal  -->
     <!-- end modal -->
 
 
     <!-- start js  -->
+    <script>
+        const showDetails = (show) => {
+            // alert(show)
+            let btnSpeci = document.getElementById("btn-speci")
+            let btnDetails = document.getElementById("btn-details")
+
+            let speci = document.getElementById("specification")
+            let details = document.getElementById("details")
+            if (show) {
+                btnDetails.className = "px-4 py-2 font-medium border-b-2 text-teal-500 border-teal-500";
+                btnSpeci.className = "px-4 font-medium py-2 hover:text-indigo-900";
+                speci.style.display = "none";
+                details.style.display = "block";
+
+            } else {
+                btnSpeci.className = "px-4 py-2 font-medium border-b-2 text-teal-500 border-teal-500";
+                btnDetails.className = "px-4 font-medium py-2 hover:text-indigo-900";
+                details.style.display = "none";
+                speci.style.display = "block";
+            }
+
+
+        };
+    </script>
     <script src="../js/common.js"></script>
     <script src="../js/modal.js"></script>
     <!-- end js  -->

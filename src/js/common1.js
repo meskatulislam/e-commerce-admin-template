@@ -16,13 +16,15 @@ const openSubMenu = (divId) => {
 
 function sidebarHandler() {
     let btnSidebar = document.getElementById("btn-sidebar");
+    let siidebarInner = document.getElementById("sidebar-inner");
     let logo = document.getElementById('logo');
     let footer = document.getElementById('footer');
     let sidebar = document.getElementById('sidebar');
     let width = sidebar.style.minWidth;
     let itemTitles = document.getElementsByClassName('sidebar-item-title');
     let btns = document.getElementsByClassName('btn-sidebar-item');
-    let subMenues = document.getElementsByClassName('sub-menu')
+    let subMenues = document.getElementsByClassName('sub-menu');
+    let subMenuItems = document.getElementsByClassName('sub-menu-item');
 
 
     // hide/show all title (Working)
@@ -42,17 +44,21 @@ function sidebarHandler() {
     // hide/show all sub menues
     for (let i = 0; i < subMenues.length; i++) {
         subMenues[i].className = 'sub-menu hidden ml-9 text-gray-300';
+        subMenuItems[i].className = 'sub-menu-item';
         if (width !== "80px") {
-            subMenues[i].className = 'sub-menu hidden ml-8 text-gray-300 group-hover:block group-hover:absolute bg-gray-900 p-2 -mt-8 w-40 rounded-r rounded-b';
+            subMenues[i].className = 'sub-menu hidden ml-9 text-gray-300 group-hover:block group-hover:absolute -mt-8 w-44 pl-3';
+            subMenuItems[i].className = 'sub-menu-item bg-gray-900 p-2 rounded text-gray-300';
         }
     }
+
 
     if (width === "80px") {
         // Expand the sidebar
         logo.style.display = "block";
         footer.style.display = "block";
-        btnSidebar.style.transform = "rotate(0deg)";
         sidebar.style.minWidth = "256px";
+        btnSidebar.style.transform = "rotate(0deg)";
+        siidebarInner.style.paddingRight = "0px";
 
 
     } else {
@@ -61,8 +67,14 @@ function sidebarHandler() {
         footer.style.display = "none";
         sidebar.style.minWidth = "80px";
         btnSidebar.style.transform = "rotate(180deg)";
+        siidebarInner.style.paddingRight = "16px";
     }
 };
+function showSidebar() {
+    let sidebar = document.getElementById('sm-sidebar');
+    // sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+    sidebar.className = sidebar.className === "hidden absolute md:static md:!block" ? "absolute md:static md:!block" : "hidden absolute md:static md:!block";
+}
 
 
 // Displaying date and time
@@ -75,3 +87,4 @@ function sidebarHandler() {
         dateTime()
     }, 1000);
 })();
+

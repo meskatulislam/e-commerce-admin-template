@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../dist/output.css">
-    <title>Brands | Admin Panel Frontend</title>
+    <title>Vouchers | Admin Panel Frontend</title>
 </head>
 
 <body>
@@ -159,15 +159,15 @@
                                                     </li>
                                                     <li>
                                                         <a href="./brand-list.html"
-                                                            class="hover:text-indigo-500 text-indigo-500">Brands</a>
+                                                            class="hover:text-indigo-500">Brands</a>
                                                     </li>
                                                     <li>
                                                         <a href="./offer-list.html"
-                                                            class="hover:text-indigo-500 ">Offers</a>
+                                                            class="hover:text-indigo-500">Offers</a>
                                                     </li>
                                                     <li>
                                                         <a href="./voucher-code.html"
-                                                            class="hover:text-indigo-500">Vouchers</a>
+                                                            class="hover:text-indigo-500 text-indigo-500">Vouchers</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -511,16 +511,16 @@
             <!-- start main body section  -->
             <div id="main-section"
                 class="flex flex-col grow  px-3 md:px-6 py-3 space-y-4 bg-slate-200 transition-all duration-200">
-                <!-- start body header  -->
+                <!-- start body header -->
                 <div class="flex justify-between">
                     <!-- Include the section title  -->
-                    <h2 class="text-3xl font-bold text-gray-800">Brand</h2>
+                    <h2 class="text-3xl font-bold text-gray-800">VOUCHERS</h2>
                     <!-- start section options  -->
                     <div class="flex items-center space-x-4">
 
                         <input type="text" id="search-product"
                             class="hidden md:block bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded px-2 py-1.5 "
-                            placeholder="Search...">
+                            placeholder="Search product">
                         <button onclick="modalHandler('modal-add', true)"
                             class="flex items-center space-x-2 bg-indigo-700 text-slate-100 h-8 px-1.5 rounded hover:bg-indigo-600">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
@@ -529,7 +529,7 @@
                                     d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
                                     clip-rule="evenodd" />
                             </svg>
-                            <span class="font-semibold">New Brand</span>
+                            <span class="font-semibold">New Voucher</span>
                         </button>
                     </div>
                     <!-- end section options  -->
@@ -540,22 +540,14 @@
                 <div class="w-full">
                     <div class="overflow-x-auto">
                         <div
-                            class="bg-white shadow-lg rounded-sm border border-gray-200 mb-2 min-w-[60rem] h-[34rem] overflow-y-auto relative">
+                            class="bg-white shadow-lg rounded-sm border border-gray-200 mb-2 min-w-[65rem] h-[34rem] overflow-y-auto relative">
                             <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
-                                <h2 class="font-semibold text-gray-800">BRAND LIST <span
-                                        class="text-gray-400 font-medium">(17)</span>
+                                <h2 class="font-semibold text-gray-800">VOUCHER LIST <span
+                                        class="text-gray-400 font-medium">(4)</span>
                                 </h2>
                                 <div class="flex items-center text-sm font-medium space-x-4 text-gray-600">
 
-                                    <div class="flex items-center space-x-1">
-                                        <span>Type</span>
-                                        <select name="" id="" class="text-sm rounded-full w-16 px-2 py-1 bg-gray-200">
-                                            <option value="">All</option>
-                                            <option value="">Super category</option>
-                                            <option value="">Sub category</option>
-                                            <option value="">Sub sub category</option>
-                                        </select>
-                                    </div>
+
                                     <div class="flex items-center space-x-1">
                                         <span>Status</span>
                                         <select name="" id="" class="text-sm rounded-full w-16 px-2 py-1 bg-gray-200">
@@ -588,19 +580,19 @@
                                             </div>
                                         </th>
                                         <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Thumbnail
+                                            Voucher Code
                                         </th>
                                         <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
+                                            Start Date
                                         </th>
                                         <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Total Product
+                                            End Date
                                         </th>
                                         <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Available
+                                            Discount
                                         </th>
                                         <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Created at
+                                            Limit
                                         </th>
                                         <th class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                             Status
@@ -618,41 +610,27 @@
                                             </div>
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
+                                            AJGF945NLKSG
                                         </td>
-
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
 
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
+                                            14/02/2022
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
+                                            30/02/2022
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
+                                            14%
+                                        </td>
+                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
+                                            100Tk
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                             <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
+                                                class="inline-flex font-medium bg-blue-100 text-blue-600 rounded-full text-center px-2.5 py-0.5">
+                                                Draft</div>
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
                                             <button onclick="modalHandler('modal-add', true)"
                                                 class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -680,221 +658,27 @@
                                             </div>
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
+                                            XJRFW45NLK09
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <a href="#">Brand Name</a>
+
+                                            14/02/2022
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
+                                            30/02/2022
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
+                                            50Tk
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
+                                            ---
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
                                             <div
-                                                class="inline-flex font-medium bg-yellow-100 text-yellow-600 rounded-full text-center px-2.5 py-0.5">
-                                                Inactive</div>
+                                                class="inline-flex font-medium bg-blue-100 text-blue-600 rounded-full text-center px-2.5 py-0.5">
+                                                Draft</div>
                                         </td>
                                         <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-add', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
-                                            </button>
-                                            <button onclick="modalHandler('modal-delete', true)"
-                                                class="rounded-full bg-slate-200 p-1 text-red-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div class="flex items-center mt-1">
-                                                <input id="parent-checkbox" class="form-checkbox" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <img class="h-10 w-10 rounded-full border-2 border-gray-200"
-                                                src="../images/img1.jfif" alt="">
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            Brand Name
-                                        </td>
-
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            50 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            35 Products
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            22/02/2022
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <div
-                                                class="inline-flex font-medium bg-green-100 text-green-600 rounded-full text-center px-2.5 py-0.5">
-                                                Active</div>
-                                        </td>
-                                        <td class="px-2 first:pl-6 last:pr-6 py-3 whitespace-nowrap">
-                                            <button
-                                                class="rounded-full bg-slate-200 p-1 text-green-600 hover:bg-slate-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </button>
                                             <button onclick="modalHandler('modal-add', true)"
                                                 class="rounded-full bg-slate-200 p-1 text-indigo-700 hover:bg-slate-300">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -957,7 +741,7 @@
     <!--- start add admin modal --->
     <div id="modal-add"
         class="hidden py-10 bg-gray-900 bg-opacity-50 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0 h-full">
-        <div class="mx-auto w-[28rem]">
+        <div class="mx-auto w-[35rem]">
             <div class="relative py-5 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
                 <div class="w-full flex justify-start items-center space-x-2 text-gray-600 mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24"
@@ -965,36 +749,92 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
                     </svg>
-                    <span class="text-2xl font-bold">New Brand</span>
+                    <span class="text-2xl font-bold">New Voucher Code</span>
                 </div>
-                <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Enter Brand
+                <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Enter Voucher
                     Details
                 </h1>
                 <form action="#" method="POST">
-                    <div class="grid grid-cols-1 gap-1">
+                    <div class="grid grid-cols-2 gap-1 gap-x-2">
                         <div>
-                            <label for="full-name"
-                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Brand Name</label>
-                            <input id="full-name" name="full-name" type="text"
+                            <label for="voucher-code"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Voucher
+                                Code</label>
+                            <input id="voucher-code" name="voucher-code" type="text"
                                 class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
-                                placeholder="Enter the full name" />
+                                placeholder="Enter the voucher code" />
                         </div>
                         <div>
-                            <label for="images"
-                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Thumbnail/Icon</label>
-                            <input id="images"
-                                class="hiddenm mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border py-1.5"
-                                type="file" id="formFile">
+                            <label for="start-date"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Starting
+                                Date</label>
+                            <input id="start-date" name="start-date" type="date"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
                         </div>
                         <div>
-                            <label for="role"
-                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Status</label>
-                            <select id="role" name="role"
+                            <label for="end-date"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Ending
+                                Date</label>
+                            <input id="end-date" name="end-date" type="date"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
+                        </div>
+
+                        <div>
+                            <label for="discount"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Discount</label>
+                            <input id="discount" name="discount" type="text"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
+                        </div>
+                        <div>
+                            <label for="limit"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Limit</label>
+                            <input id="limit" name="limit" type="number"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
+                        </div>
+                        <div>
+                            <label for="category"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Category</label>
+                            <select id="category" name="category"
                                 class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border">
+                                <option value="">All Category</option>
+                                <option value="">Category 01</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="brand"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Brand</label>
+                            <select id="brand" name="brand"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border">
+                                <option value="">All Brand</option>
+                                <option value="">Category 01</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="area"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Area</label>
+                            <select id="area" name="area"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border">
+                                <option value="">All Area</option>
+                                <option value="">Chittagong</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="status"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Status</label>
+                            <select id="status" name="status"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border">
+                                <option value="">Draft</option>
                                 <option value="">Active</option>
                                 <option value="">Inactive</option>
                             </select>
                         </div>
+                        <div>
+                            <label for="product-name"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Description</label>
+                            <textarea id="" rows="2"
+                                class="mb-3 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full flex items-center pl-3 text-sm border-gray-300 rounded border py-1.5"></textarea>
+                        </div>
+
                     </div>
                     <div class="flex items-center justify-start w-full">
                         <button type="submit"
@@ -1033,10 +873,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                     </svg>
-                    <span class="text-xl font-bold">Delete admin</span>
+                    <span class="text-xl font-bold">Delete voucher</span>
                 </div>
                 <p class="text-gray-900 font-lg font-semibold tracking-normal leading-tight">
-                    Are you sure you want to delete the admin?
+                    Are you sure you want to delete the voucher?
                     </h1>
                 <div>
 
